@@ -6,6 +6,8 @@ import Services from "./pages/Services";
 import Project from "./pages/Project";
 import Extra from "./pages/Extra";
 import Hobby from "./pages/Hobby";
+import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 import Image from "next/image";
 import Profile from "./images/profile.png";
 
@@ -46,6 +48,8 @@ export default function Home() {
       <Project />
       <Extra/>
       <Hobby/>
+      <Contact/>
+      <Footer/>
     </div>
   );
 }
