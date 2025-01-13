@@ -10,15 +10,21 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        java: "#FF6F61",
+        python: "#3776AB",
+        c_cpp: "#00599C",
+        html_css: "#E34F26",
+        js_jquery: "#F7DF1E",
+        mysql: "#4479A1",
+        react_node: "#61DAFB",
       },
       animation: {
-        'gradient-x': 'gradient-x 6s ease infinite', // Continuous animation with ease
+        progress: 'progress 2s ease-out forwards', // Smooth width fill to stop at the target
       },
       keyframes: {
-        'gradient-x': {
-          '0%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' },
+        progress: {
+          '0%': { width: '0%' },
+          '100%': { width: 'var(--tw-progress-width)' }, // Dynamically handled by CSS variables
         },
       },
     },
