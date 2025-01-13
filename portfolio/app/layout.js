@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
-<div className="bg-gray-100 text-gray-900 flex justify-between items-center min-h-12">
+<div className="fixed top-0 w-full bg-gray-100 text-gray-900 flex justify-between items-center min-h-12">
 <div className="ml-48">
   <Link
     href="/"
@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
 
   <div className="flex space-x-6 mr-36 font-semibold">
     <Link href="/." className="text-lg"> Home </Link>
-    <Link href="/about" className="text-lg"> About Me </Link>
+    <Link href="#about" scroll={false} className="text-lg"> About Me </Link>
     <Link href="/skill" className="text-lg"> Skill </Link>
     <Link href="/experience" className="text-lg"> Experience </Link>
     <Link href="/service" className="text-lg"> Service </Link>
