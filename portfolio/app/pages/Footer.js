@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-screen-xl mx-auto">
         {/* Quick Links */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 mb-10">
-          <div>
+          <div className="ml-20 mr-32" >
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul>
               <li><a href="/" className="hover:text-blue-500">Home</a></li>
@@ -19,7 +19,7 @@ export default function Footer() {
           </div>
           
           {/* Social Media */}
-          <div>
+          <div className="mr-96">
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a href="https://facebook.com" className="text-white hover:text-blue-500">

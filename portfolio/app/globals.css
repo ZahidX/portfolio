@@ -41,3 +41,13 @@ body {
   transition: width 1s ease-in-out;
   width: 0%; /* Initial state before animation */
 }
+
+/* Hide scrollbar */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
