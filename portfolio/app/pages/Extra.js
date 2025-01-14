@@ -58,7 +58,7 @@ export default function ExtraCurricularPage() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gray-300 overflow-x-hidden">
+    <div className="relative min-h-screen bg-gray-200 overflow-x-hidden">
       {/* Page Heading */}
       <div className="relative z-10">
         <h1 className="pt-12 pb-4 font-bold text-3xl text-center underline underline-offset-4 decoration-blue-600">

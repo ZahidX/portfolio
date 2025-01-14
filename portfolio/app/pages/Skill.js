@@ -1,31 +1,35 @@
 "use client";
 import { useEffect } from "react";
+import Skillcompo from "../components/Skillcompo";
 
 export default function SkillPage() {
   useEffect(() => {
-    const progressBars = document.querySelectorAll('.progress-bar');
+    const progressBars = document.querySelectorAll(".progress-bar");
 
     // Initialize IntersectionObserver
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        const progressBar = entry.target;
-        if (entry.isIntersecting) {
-          // When the progress bar comes into view, animate it
-          const progress = progressBar.dataset.progress;
-          progressBar.style.transition = "width 1s ease-in-out"; // Add smooth transition for width
-          progressBar.style.width = progress;
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          const progressBar = entry.target;
+          if (entry.isIntersecting) {
+            // When the progress bar comes into view, animate it
+            const progress = progressBar.dataset.progress;
+            progressBar.style.transition = "width 1s ease-in-out"; // Add smooth transition for width
+            progressBar.style.width = progress;
 
-          // Re-observe after animation so the bar can animate again if needed
-          observer.observe(progressBar);
-        } else {
-          // Reset width if the progress bar goes out of view
-          progressBar.style.width = '0%';
-        }
-      });
-    }, { threshold: 0.5 }); // Trigger when 50% of the bar is in view
+            // Re-observe after animation so the bar can animate again if needed
+            observer.observe(progressBar);
+          } else {
+            // Reset width if the progress bar goes out of view
+            progressBar.style.width = "0%";
+          }
+        });
+      },
+      { threshold: 0.5 }
+    ); // Trigger when 50% of the bar is in view
 
     // Observe all progress bars
-    progressBars.forEach(progressBar => {
+    progressBars.forEach((progressBar) => {
       observer.observe(progressBar);
     });
 
@@ -52,7 +56,6 @@ export default function SkillPage() {
             <div>
               <div className="flex justify-between text-gray-700">
                 <span className="font-semibold">Java</span>
-                
               </div>
               <div className="w-full bg-gray-200 h-5 rounded-full overflow-hidden relative">
                 <div
@@ -70,7 +73,6 @@ export default function SkillPage() {
             <div>
               <div className="flex justify-between text-gray-700">
                 <span className="font-semibold">Python</span>
-                
               </div>
               <div className="w-full bg-gray-200 h-5 rounded-full overflow-hidden relative">
                 <div
@@ -88,7 +90,6 @@ export default function SkillPage() {
             <div>
               <div className="flex justify-between text-gray-700">
                 <span className="font-semibold">C & C++</span>
-               
               </div>
               <div className="w-full bg-gray-200 h-5 rounded-full overflow-hidden relative">
                 <div
@@ -106,7 +107,6 @@ export default function SkillPage() {
             <div>
               <div className="flex justify-between text-gray-700">
                 <span className="font-semibold">HTML & CSS</span>
-                
               </div>
               <div className="w-full bg-gray-200 h-5 rounded-full overflow-hidden relative">
                 <div
@@ -124,7 +124,6 @@ export default function SkillPage() {
             <div>
               <div className="flex justify-between text-gray-700">
                 <span className="font-semibold">JavaScript & jQuery</span>
-               
               </div>
               <div className="w-full bg-gray-200 h-5 rounded-full overflow-hidden relative">
                 <div
@@ -142,7 +141,6 @@ export default function SkillPage() {
             <div>
               <div className="flex justify-between text-gray-700">
                 <span className="font-semibold">MySQL</span>
-               
               </div>
               <div className="w-full bg-gray-200 h-5 rounded-full overflow-hidden relative">
                 <div
@@ -160,7 +158,6 @@ export default function SkillPage() {
             <div>
               <div className="flex justify-between text-gray-700">
                 <span className="font-semibold">React & Node.js</span>
-                
               </div>
               <div className="w-full bg-gray-200 h-5 rounded-full overflow-hidden relative">
                 <div
@@ -176,22 +173,13 @@ export default function SkillPage() {
           </div>
         </div>
 
-        {/* Tools & Software */}
-        <div className="flex-1 bg-gray-50 shadow-md p-6 rounded-lg">
-          <h2 className="text-xl font-bold mb-4 text-green-600">Tools & Software</h2>
-          <div className="text-gray-700 space-y-2">
-            <p>Git & GitHub</p>
-            <p>NetBeans</p>
-            <p>Visual Studio Code</p>
-            <p>Android Studio</p>
-            <p>Adobe Photoshop</p>
-            <p>Microsoft Office</p>
-          </div>
-        </div>
+        <Skillcompo />
 
         {/* Other Skills */}
         <div className="flex-1 bg-gray-50 shadow-md p-6 rounded-lg">
-          <h2 className="text-xl font-bold mb-4 text-purple-600">Other Skills</h2>
+          <h2 className="text-xl font-bold mb-4 text-purple-600">
+            Other Skills
+          </h2>
           <div className="text-gray-700 space-y-2">
             <p>Problem Solving</p>
             <p>Teamwork</p>

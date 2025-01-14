@@ -15,6 +15,7 @@ export default {
         c_cpp: "#00599C",
         html_css: "#E34F26",
         js_jquery: "#F7DF1E",
+        customDarkBlue: "#21434E",
         mysql: "#4479A1",
         react_node: "#61DAFB",
       },
