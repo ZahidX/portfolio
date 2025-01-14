@@ -1,52 +1,89 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useRef } from "react";
 
 export default function ExperiencePage() {
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerPoint = window.innerHeight * 0.85; // Trigger animation when the card is 85% in view
+      cardRefs.current.forEach((card) => {
+        if (card) {
+          const rect = card.getBoundingClientRect();
+          if (rect.top < triggerPoint) {
+            card.style.opacity = 1;
+            card.style.transform = "translateY(0) scale(1)";
+          } else {
+            card.style.opacity = 0;
+            card.style.transform = "translateY(60px) scale(0.9)";
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const experiences = [
+    {
+      title: "Student Research Assistant",
+      organization: "Independent University, Bangladesh",
+      duration: "Jan 2023 - Present",
+      description:
+        "Collaborated with professors on research projects related to computer vision and machine learning. Assisted in data collection, analysis, and model implementation.",
+      color: "bg-gradient-to-r from-blue-500 to-purple-600 text-white",
+    },
+    {
+      title: "Freelance Web Designer & Developer",
+      organization: "Various Clients",
+      duration: "May 2022 - Present",
+      description:
+        "Worked as a freelance web designer and developer for multiple clients. Designed and developed responsive websites using HTML, CSS, JavaScript, React, Node.js, and MySQL.",
+      color: "bg-gradient-to-r from-green-400 to-blue-500 text-white",
+    },
+    {
+      title: "Tutor",
+      organization: "Self-Employed",
+      duration: "Sep 2020 - Present",
+      description:
+        "Offered private tutoring services to high school students in subjects like Mathematics, Physics, and ICT. Helped students improve their understanding and performance in their academics.",
+      color: "bg-gradient-to-r from-pink-500 to-red-500 text-white",
+    },
+    {
+      title: "Photo Editing & Logo Design",
+      organization: "Freelance Projects",
+      duration: "Jan 2020 - Dec 2021",
+      description:
+        "Provided photo editing and logo design services for clients from various industries. Utilized Adobe Photoshop and Illustrator to create visually appealing and professional designs that met clients' requirements.",
+      color: "bg-gradient-to-r from-yellow-500 to-orange-500 text-white",
+    },
+  ];
+
   return (
-    <div>
-      <h1 className="pt-12 pb-12 font-bold text-2xl text-center underline underline-offset-4 bg-gray-100 decoration-black">
+    <div className="min-h-screen bg-gray-100 py-10">
+      <h1 className="pt-12 pb-12 font-bold text-3xl text-center underline underline-offset-4 decoration-blue-500">
         Experience
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 py-8">
-        {/* Experience Card 1 */}
-        <div className="bg-gray-50 shadow-md p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-blue-600">Student Research Assistant</h3>
-          <p className="text-gray-700">Independent University, Bangladesh</p>
-          <p className="text-gray-500">Jan 2023 - Present</p>
-          <p className="mt-4 text-gray-700">
-            Collaborated with professors on research projects related to computer vision and machine learning. Assisted in data collection, analysis, and model implementation.
-          </p>
-        </div>
-
-        {/* Experience Card 2 */}
-        <div className="bg-gray-50 shadow-md p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-blue-600">Freelance Web Designer & Developer</h3>
-          <p className="text-gray-700">Various Clients</p>
-          <p className="text-gray-500">May 2022 - Present</p>
-          <p className="mt-4 text-gray-700">
-            Works as a freelance web designer and developer for multiple clients. Designed and developed responsive websites using HTML, CSS, JavaScript, React, Node.js, and MySQL.
-          </p>
-        </div>
-
-        {/* Experience Card 3 */}
-        <div className="bg-gray-50 shadow-md p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-blue-600">Tutor</h3>
-          <p className="text-gray-700">Self-Employed</p>
-          <p className="text-gray-500">Sep 2020 - Present</p>
-          <p className="mt-4 text-gray-700">
-            Offered private tutoring services to high school students in subjects like Mathematics, Physics, and ICT. Helped students improve their understanding and performance in their academics.
-          </p>
-        </div>
-
-        {/* Experience Card 4 */}
-        <div className="bg-gray-50 shadow-md p-6 rounded-lg">
-          <h3 className="text-xl font-semibold text-blue-600">Photo Editing & Logo Design</h3>
-          <p className="text-gray-700">Freelance Projects</p>
-          <p className="text-gray-500">Jan 2020 - Dec 2021</p>
-          <p className="mt-4 text-gray-700">
-            Provided photo editing and logo design services for clients from various industries. Utilized Adobe Photoshop and Illustrator to create visually appealing and professional designs that met clients' requirements.
-          </p>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 py-8">
+        {experiences.map((exp, index) => (
+          <div
+            key={index}
+            ref={(el) => (cardRefs.current[index] = el)}
+            className={`shadow-lg p-6 rounded-xl transform transition-all duration-[1200ms] ease-out hover:shadow-2xl hover:scale-[1.05] hover:rotate-[2deg] ${exp.color}`}
+            style={{
+              opacity: 0, // Hidden by default
+              transform: "translateY(60px) scale(0.9)", // Initial state
+            }}
+          >
+            <h3 className="text-2xl font-semibold">{exp.title}</h3>
+            <p className="text-sm mt-2">{exp.organization}</p>
+            <p className="text-sm text-gray-300">{exp.duration}</p>
+            <p className="mt-4 text-base">{exp.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

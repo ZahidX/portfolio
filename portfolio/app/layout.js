@@ -1,6 +1,8 @@
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from 'next/link'
+import DarkModeToggle from "./components/DarkModeToggle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,33 +25,76 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-
-<div className="fixed top-0 w-full bg-gray-100 text-gray-900 flex justify-between items-center min-h-12">
-<div className="ml-48">
-  <Link
-    href="/"
-    className="text-3xl font-bold text-gray-600"
-    style={{
-      fontFamily: "'Dancing Script', cursive",
-      textShadow: "2px 2px 8px rgba(156, 0, 128, 0.8), 0px 0px 12px rgba(32, 196, 128, 0.5)",
-    }}
-  >
-    Zahid
-  </Link>
-</div>
-
+<div className="fixed top-0 w-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 flex justify-between items-center min-h-12">
+  <div className="ml-48">
+    <Link
+      href="/"
+      className="text-3xl font-bold text-gray-600 dark:text-gray-200"
+      style={{
+        fontFamily: "'Dancing Script', cursive",
+        textShadow: "2px 2px 8px rgba(156, 0, 128, 0.8), 0px 0px 12px rgba(32, 196, 128, 0.5)",
+      }}
+    >
+      Zahid
+    </Link>
+  </div>
 
   <div className="flex space-x-6 mr-36 font-semibold">
-    <Link href="/." className="text-lg"> Home </Link>
-    <Link href="#about" scroll={false} className="text-lg"> About Me </Link>
-    <Link href="/skill" className="text-lg"> Skill </Link>
-    <Link href="/experience" className="text-lg"> Experience </Link>
-    <Link href="/service" className="text-lg"> Service </Link>
-    <Link href="/project" className="text-lg"> Project & Research </Link>
-    <Link href="/blog" className="text-lg"> Blog </Link>
-    <Link href="/contact" className="text-lg"> Contact </Link>
+    <Link
+      href="/."
+      className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+    >
+      Home
+    </Link>
+    <Link
+      href="#about"
+      scroll={false}
+      className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+    >
+      About Me
+    </Link>
+    <Link
+      href="/skill"
+      className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+    >
+      Skill
+    </Link>
+    <Link
+      href="/experience"
+      className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+    >
+      Experience
+    </Link>
+    <Link
+      href="/service"
+      className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+    >
+      Service
+    </Link>
+    <Link
+      href="/project"
+      className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+    >
+      Project & Research
+    </Link>
+    <Link
+      href="/blog"
+      className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+    >
+      Blog
+    </Link>
+    <Link
+      href="/contact"
+      className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
+    >
+      Contact
+    </Link>
+
+    {/* Dark Mode Toggle */}
+    <DarkModeToggle />
   </div>
 </div>
+
 
 
         {children}

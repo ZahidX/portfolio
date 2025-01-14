@@ -11,6 +11,7 @@ import Footer from "./pages/Footer";
 import Image from "next/image";
 import Profile from "./images/profile.png";
 
+
 export default function Home() {
   return (
     <div>
