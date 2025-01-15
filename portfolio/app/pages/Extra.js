@@ -36,32 +36,36 @@ export default function ExtraCurricularPage() {
       title: "Debating Society",
       description:
         "Participated in inter-school debates and won awards for public speaking and critical thinking.",
-      color: "bg-blue-600 text-white",
+      lightColor: "bg-blue-600 text-white",
+      darkColor: "bg-blue-800 text-gray-200",
     },
     {
       title: "Community Service",
       description:
         "Actively involved in volunteering at local charity organizations, contributing to social causes.",
-      color: "bg-green-600 text-white",
+      lightColor: "bg-green-600 text-white",
+      darkColor: "bg-green-800 text-gray-200",
     },
     {
       title: "Sports",
       description:
         "Played cricket and represented the school team in regional tournaments.",
-      color: "bg-yellow-500 text-white",
+      lightColor: "bg-yellow-500 text-white",
+      darkColor: "bg-yellow-700 text-gray-200",
     },
     {
       title: "Gaming",
       description: "Played many esports tournaments and won awards.",
-      color: "bg-purple-600 text-white",
+      lightColor: "bg-purple-600 text-white",
+      darkColor: "bg-purple-800 text-gray-200",
     },
   ];
 
   return (
-    <div className="relative min-h-screen bg-gray-200 overflow-x-hidden">
+    <div className="relative min-h-screen bg-gray-200 dark:bg-gray-900 overflow-x-hidden">
       {/* Page Heading */}
       <div className="relative z-10">
-        <h1 className="pt-12 pb-4 font-bold text-3xl text-center underline underline-offset-4 decoration-blue-600">
+        <h1 className="pt-12 pb-4 font-bold text-3xl text-center decoration-blue-600 dark:decoration-blue-400 text-gray-200 dark:text-gray-200">
           Extra-Curricular Activities
         </h1>
       </div>
@@ -72,14 +76,14 @@ export default function ExtraCurricularPage() {
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            className={`relative p-6 rounded-lg shadow-lg transition-all duration-[800ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${section.color}`}
+            className={`relative p-6 rounded-lg shadow-lg transition-all duration-[800ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${section.lightColor} dark:${section.darkColor}`}
             style={{
               opacity: 0, // Hidden by default
               transform: "translateY(40px)", // Initial position
             }}
           >
-            <h2 className="text-2xl font-semibold">{section.title}</h2>
-            <p className="mt-2 text-base">{section.description}</p>
+            <h2 className="text-2xl font-semibold text-gray-50 dark:text-gray-50">{section.title}</h2>
+            <p className="mt-2 text-base text-gray-200 dark:text-gray-50">{section.description}</p>
           </div>
         ))}
       </div>

@@ -42,17 +42,14 @@ export default function Hobbies() {
   ];
 
   return (
-    <div className="relative bg-purple-900 text-gray-50 pt-28 pb-12 px-8 pl-28 pr-28 overflow-x-hidden">
-      {/* Preserve your padding values */}
-      <h1 className="text-3xl font-bold text-center mb-10 ">
-        Hobbies
-      </h1>
-      <div className="w-full h-[2px] bg-gray-100 mx-auto mb-8"></div>
+    <div className="bg-purple-900 dark:bg-gray-900 text-gray-50 dark:text-gray-200 pt-28 pb-12 px-8 pl-28 pr-28 overflow-x-hidden">
+      <h1 className="text-3xl font-bold text-center mb-10">Hobbies</h1>
+      <div className="w-full h-[2px] bg-gray-100 dark:bg-gray-700 mx-auto mb-8"></div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {hobbies.map((hobby, index) => (
           <div
             key={index}
-            className="group bg-white rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-100 transition duration-300 p-6"
+            className="group bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-300 p-6"
           >
             <div className="w-full h-24 relative">
               <Image
@@ -64,10 +61,12 @@ export default function Hobbies() {
               />
             </div>
             <div className="mt-4">
-              <h2 className="text-xl font-semibold text-gray-800 group-hover:text-blue-600">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600">
                 {hobby.title}
               </h2>
-              <p className="mt-2 text-gray-600">{hobby.description}</p>
+              <p className="mt-2 text-gray-600 dark:text-gray-400">
+                {hobby.description}
+              </p>
             </div>
           </div>
         ))}

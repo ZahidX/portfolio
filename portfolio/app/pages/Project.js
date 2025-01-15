@@ -3,14 +3,14 @@ import Image from "next/image";
 
 export default function ProjectsResearchPage() {
   return (
-    <div>
-      <h1 className="pt-12 pb-12 font-bold text-2xl text-center underline underline-offset-4 bg-gray-100 decoration-black">
+    <div className="bg-gray-100 dark:bg-gray-900 min-h-screen" id="projects">
+      <h1 className="pt-12 pb-12 font-bold text-3xl text-center underline underline-offset-4 decoration-blue-500 text-black dark:text-white">
         Projects & Research
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-8" >
         {/* Project Card 1 */}
-        <div className="bg-gray-50 shadow-md p-6 rounded-lg">
+        <div className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg">
           <Image
             src="/images/student-performance.png" // Replace with your actual image path
             alt="Student Performance Monitoring System"
@@ -18,12 +18,13 @@ export default function ProjectsResearchPage() {
             height={200}
             className="rounded-t-lg"
             objectFit="cover"
+            priority={true} // Improves image loading for the first visible project
           />
           <div className="pt-4">
-            <h3 className="text-xl font-semibold text-blue-600">
+            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
               Student Performance Monitoring System
             </h3>
-            <p className="mt-2 text-gray-700">
+            <p className="mt-2 text-gray-700 dark:text-gray-300">
               A web-based application for monitoring and managing student
               performance. Built using React, Node.js, and MySQL.
             </p>
@@ -31,7 +32,7 @@ export default function ProjectsResearchPage() {
               href="https://github.com/your-repo-link" // Replace with actual GitHub link
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline"
+              className="block mt-4 text-blue-500 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300"
             >
               GitHub Link
             </a>
@@ -39,7 +40,7 @@ export default function ProjectsResearchPage() {
         </div>
 
         {/* Project Card 2 */}
-        <div className="bg-gray-50 shadow-md p-6 rounded-lg">
+        <div className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg">
           <Image
             src="/images/todo-list.png" // Replace with your actual image path
             alt="To-Do List App"
@@ -49,8 +50,10 @@ export default function ProjectsResearchPage() {
             objectFit="cover"
           />
           <div className="pt-4">
-            <h3 className="text-xl font-semibold text-blue-600">To-Do List App</h3>
-            <p className="mt-2 text-gray-700">
+            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+              To-Do List App
+            </h3>
+            <p className="mt-2 text-gray-700 dark:text-gray-300">
               A simple and intuitive to-do list application with features like
               adding tasks, marking completed tasks, and more. Developed using
               React and Firebase.
@@ -59,7 +62,7 @@ export default function ProjectsResearchPage() {
               href="https://github.com/your-repo-link" // Replace with actual GitHub link
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline"
+              className="block mt-4 text-blue-500 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300"
             >
               GitHub Link
             </a>
@@ -67,7 +70,7 @@ export default function ProjectsResearchPage() {
         </div>
 
         {/* Project Card 3 */}
-        <div className="bg-gray-50 shadow-md p-6 rounded-lg">
+        <div className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg">
           <Image
             src="/images/shopping-cart.png" // Replace with your actual image path
             alt="Simple Shopping Cart"
@@ -77,10 +80,10 @@ export default function ProjectsResearchPage() {
             objectFit="cover"
           />
           <div className="pt-4">
-            <h3 className="text-xl font-semibold text-blue-600">
+            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
               Simple Shopping Cart
             </h3>
-            <p className="mt-2 text-gray-700">
+            <p className="mt-2 text-gray-700 dark:text-gray-300">
               An e-commerce website with basic shopping cart functionality.
               Developed using React, Node.js, and MongoDB.
             </p>
@@ -88,7 +91,7 @@ export default function ProjectsResearchPage() {
               href="https://github.com/your-repo-link" // Replace with actual GitHub link
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline"
+              className="block mt-4 text-blue-500 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300"
             >
               GitHub Link
             </a>

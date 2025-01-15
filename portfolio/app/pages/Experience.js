@@ -6,6 +6,15 @@ export default function ExperiencePage() {
   const cardRefs = useRef([]);
 
   useEffect(() => {
+    // Smooth scrolling for the Experience section
+    if (window.location.hash === "#experience") {
+      const experienceSection = document.getElementById("experience");
+      if (experienceSection) {
+        experienceSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    // Handle scroll animations
     const handleScroll = () => {
       const triggerPoint = window.innerHeight * 0.85; // Trigger animation when the card is 85% in view
       cardRefs.current.forEach((card) => {
@@ -62,8 +71,11 @@ export default function ExperiencePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10">
-      <h1 className="pt-12 pb-12 font-bold text-3xl text-center underline underline-offset-4 decoration-blue-500">
+    <div
+      id="experience"
+      className="min-h-screen bg-gray-100 py-10 dark:bg-gradient-to-b dark:from-[#280B4D] dark:via-[#370643] dark:to-[#21051F] dark:text-white"
+    >
+      <h1 className="pt-12 pb-12 font-bold text-3xl text-center underline underline-offset-4 decoration-blue-500 dark:decoration-gray-100">
         Experience
       </h1>
 
@@ -72,16 +84,16 @@ export default function ExperiencePage() {
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            className={`shadow-lg p-6 rounded-xl transform transition-all duration-[1200ms] ease-out hover:shadow-2xl hover:scale-[1.05] hover:rotate-[2deg] ${exp.color}`}
+            className={`shadow-lg p-6 rounded-xl transform transition-all duration-[1200ms] ease-out hover:shadow-2xl hover:scale-[1.05] hover:rotate-[2deg] ${exp.color} dark:bg-transparent dark:text-white`}
             style={{
               opacity: 0, // Hidden by default
               transform: "translateY(60px) scale(0.9)", // Initial state
             }}
           >
-            <h3 className="text-2xl font-semibold">{exp.title}</h3>
-            <p className="text-sm mt-2">{exp.organization}</p>
-            <p className="text-sm text-gray-300">{exp.duration}</p>
-            <p className="mt-4 text-base">{exp.description}</p>
+            <h3 className="text-2xl font-semibold dark:text-white">{exp.title}</h3>
+            <p className="text-sm mt-2 dark:text-gray-300">{exp.organization}</p>
+            <p className="text-sm dark:text-gray-400">{exp.duration}</p>
+            <p className="mt-4 text-base dark:text-gray-300">{exp.description}</p>
           </div>
         ))}
       </div>
