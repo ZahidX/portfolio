@@ -1,5 +1,8 @@
 import React from "react";
 import Web from "../images/web.png";
+import Ps from "../images/ps.png";
+import Bug from "../images/bug.png";
+import Email from "../images/email.png";
 import Image from "next/image";
 
 export default function ServicePage() {
@@ -16,7 +19,7 @@ export default function ServicePage() {
             <Image
               src={Web}
               alt="Web Development"
-              className="w-16 h-16 object-cover"
+              className="w-24 h-24 object-cover mr-8"
             />
             <div>
               <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
@@ -33,10 +36,10 @@ export default function ServicePage() {
         {/* Service Card 2: Photoshop */}
         <div className="bg-gray-50 dark:bg-gray-800 shadow-md mr-36 p-6 rounded-lg w-full md:w-4/5 mx-auto">
           <div className="flex items-center space-x-2">
-            <img
-              src="/path/to/photoshop-image.jpg" // Replace with your actual image path
+            <Image
+              src={Ps} 
               alt="Photoshop"
-              className="w-16 h-16 object-cover rounded-full"
+              className="w-24 h-24 mr-2 object-cover rounded-full"
             />
             <div>
               <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
@@ -53,10 +56,10 @@ export default function ServicePage() {
         {/* Service Card 3: Bug Fixing */}
         <div className="bg-gray-50 dark:bg-gray-800 shadow-md ml-36 p-6 rounded-lg w-full md:w-4/5 mx-auto">
           <div className="flex items-center space-x-2">
-            <img
-              src="/path/to/bug-fixing-image.jpg" // Replace with your actual image path
+            <Image
+              src={Bug} 
               alt="Bug Fixing"
-              className="w-16 h-16 object-cover rounded-full"
+              className="w-36 h-36 object-cover rounded-full -ml-3"
             />
             <div>
               <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
@@ -73,10 +76,10 @@ export default function ServicePage() {
         {/* Service Card 4: Email Template */}
         <div className="bg-gray-50 dark:bg-gray-800 shadow-md mr-36 p-6 rounded-lg w-full md:w-4/5 mx-auto">
           <div className="flex items-center space-x-2">
-            <img
-              src="/path/to/email-template-image.jpg" // Replace with your actual image path
+            <Image
+              src={Email} // Replace with your actual image path
               alt="Email Template"
-              className="w-16 h-16 object-cover rounded-full"
+              className="w-32 h-32 object-cover rounded-full -ml-2"
             />
             <div>
               <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">

@@ -40,7 +40,7 @@ const Interest = () => {
     <div className="pt-36 pb-10 min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white px-8 py-12">
       {/* Section with left and right padding */}
       <div className="px-12 py-8">
-        <h2 className="text-3xl font-semibold text-white -mb-24">Today's Highlights</h2>
+        <h2 className="text-3xl font-semibold text-white -mb-24">Life Event Highlights</h2>
 
         {/* Colorful blocks with random movement */}
         <div className="flex space-x-4 relative">
