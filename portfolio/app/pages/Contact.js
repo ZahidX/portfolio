@@ -23,7 +23,7 @@ export default function Contact() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Left Section: Address and Calling Section */}
-        <div className="space-y-8 pt-36">
+        <div className="space-y-8 pt-28">
           {/* Address Icons */}
           <div className="space-y-10">
             <div className="flex items-center">

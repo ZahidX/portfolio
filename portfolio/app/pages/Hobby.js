@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Music from "../images/music.png";
 import Photography from "../images/photography.png";
@@ -7,9 +8,9 @@ import Game from "../images/game.png";
 import Book from "../images/book.png";
 import Travel from "../images/travel.png";
 
-
-
 export default function Hobbies() {
+  const lineRef = useRef(null);
+
   const hobbies = [
     {
       title: "Listening to Music",
@@ -49,10 +50,42 @@ export default function Hobbies() {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            lineRef.current.classList.add("animate-line");
+          } else {
+            lineRef.current.classList.remove("animate-line");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (lineRef.current) {
+      observer.observe(lineRef.current);
+    }
+
+    return () => {
+      if (lineRef.current) {
+        observer.unobserve(lineRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="bg-purple-900 dark:bg-gray-900 text-gray-50 dark:text-gray-200 pt-28 pb-12 px-8 pl-28 pr-28 overflow-x-hidden">
+<div className="bg-gradient-to-r from-blue-400 via-blue-300 to-off-white dark:bg-gradient-to-r dark:from-blue-800 dark:via-blue-700 dark:to-gray-800 text-gray-50 dark:text-gray-200 pt-28 pb-12 px-8 pl-28 pr-28 overflow-x-hidden">
+
       <h1 className="text-3xl font-bold text-center mb-10">Hobbies</h1>
-      <div className="w-full h-[2px] bg-gray-100 dark:bg-gray-700 mx-auto mb-8"></div>
+      
+      {/* Animated Horizontal Line */}
+      <div
+        ref={lineRef}
+        className="w-full h-[2px] mx-auto mb-8"
+      ></div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {hobbies.map((hobby, index) => (
           <div
@@ -64,8 +97,6 @@ export default function Hobbies() {
                 src={hobby.image}
                 alt={hobby.title}
                 layout="fill"
-                // width={300}
-                // height={200} 
                 objectFit="cover"
                 className="rounded-t-lg"
               />
@@ -81,6 +112,32 @@ export default function Hobbies() {
           </div>
         ))}
       </div>
+      <style jsx>{`
+  @keyframes slide {
+    0% {
+      width: 0%;
+      box-shadow: 0 0 0px 0px rgba(25, 255, 255, 0.9); /* Subtle White Shadow */
+    }
+    100% {
+      width: 100%;
+      box-shadow: 0 0 5px 2px rgba(255, 25, 25, 0.3); /* Subtle White Shadow */
+    }
+  }
+
+  .animate-line {
+    animation: slide 2s ease-in-out forwards;
+    background-color: rgba(129, 140, 248, 0.4); /* White for normal mode */
+  }
+
+  .dark .animate-line {
+    background-color: rgba(129, 140, 248, 0.8); /* Green for dark mode */
+    box-shadow: 0 0 5px 2px rgba(129, 140, 248, 0.3); /* Green shadow for dark mode */
+  }
+`}</style>
+
+
+
+
     </div>
   );
 }
