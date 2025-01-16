@@ -30,30 +30,24 @@ export default function Address() {
       {/* Animations */}
       <style jsx>{`
         .icon-container {
-          animation: floatExpanded 5s ease-in-out infinite;
+          animation: floatHorizontal 7s ease-in-out infinite;
         }
 
-        @keyframes floatExpanded {
+        @keyframes floatHorizontal {
           0% {
-            transform: translate(0, 0);
-          }
-          25% {
-            transform: translate(40px, -40px);
+            transform: translateX(-80px);
           }
           50% {
-            transform: translate(0, -60px);
-          }
-          75% {
-            transform: translate(-40px, -40px);
+            transform: translateX(80px);
           }
           100% {
-            transform: translate(0, 0);
+            transform: translateX(-80px);
           }
         }
 
         /* Specific adjustments for staggered animations */
         .home-icon {
-          animation-delay: 0.2s;
+          animation-delay: 0.8s;
         }
         .phone-icon {
           animation-delay: 0.4s;

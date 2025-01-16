@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="fixed top-0 w-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 flex justify-between items-center min-h-12">
+        <div className="fixed top-0 w-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 flex justify-between items-center min-h-12 z-20">
           {/* Logo Section */}
           <div className="ml-48">
             <Link

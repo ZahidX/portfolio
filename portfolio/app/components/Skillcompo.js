@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 export default function SkillsSection() {
   const skills = [
@@ -16,7 +15,7 @@ export default function SkillsSection() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gray-50 py-10 overflow-hidden">
+    <div className="relative min-h-screen bg-gray-50 py-20 overflow-hidden">
       <style>{`
         @keyframes float {
           0%, 100% {
@@ -36,7 +35,7 @@ export default function SkillsSection() {
           animation: float 5s ease-in-out infinite;
         }
       `}</style>
-      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative">
+      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative z-10">
         {skills.map((skill, index) => (
           <div
             key={index}
