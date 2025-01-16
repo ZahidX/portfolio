@@ -71,11 +71,12 @@ export default function ExperiencePage() {
   ];
 
   return (
-    <div
-      id="experience"
-      className="min-h-screen bg-gray-100 py-10 dark:bg-gradient-to-b dark:from-[#280B4D] dark:via-[#370643] dark:to-[#21051F] dark:text-white"
-    >
-      <h1 className="pt-12 pb-12 font-bold text-3xl text-center underline underline-offset-4 decoration-blue-500 dark:decoration-gray-100">
+<div
+  id="experience"
+  className="min-h-screen  bg-gray-100 py-10 dark:bg-gradient-to-b dark:from-[#220E35] dark:to-[#0E1628] dark:text-white"
+>
+
+      <h1 className="pt-12 pb-12 font-bold text-5xl text-center decoration-blue-500 dark:decoration-gray-100">
         Experience
       </h1>
 
@@ -91,9 +92,9 @@ export default function ExperiencePage() {
             }}
           >
             <h3 className="text-2xl font-semibold dark:text-white">{exp.title}</h3>
-            <p className="text-sm mt-2 dark:text-gray-300">{exp.organization}</p>
-            <p className="text-sm dark:text-gray-400">{exp.duration}</p>
-            <p className="mt-4 text-base dark:text-gray-300">{exp.description}</p>
+            <p className="text-sm mt-2 dark:text-gray-100">{exp.organization}</p>
+            <p className="text-sm dark:text-gray-50">{exp.duration}</p>
+            <p className="mt-4 text-base dark:text-gray-50">{exp.description}</p>
           </div>
         ))}
       </div>

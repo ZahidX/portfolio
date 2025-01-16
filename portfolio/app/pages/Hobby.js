@@ -76,9 +76,10 @@ export default function Hobbies() {
   }, []);
 
   return (
-<div className="bg-gradient-to-r from-blue-400 via-blue-300 to-off-white dark:bg-gradient-to-r dark:from-blue-800 dark:via-blue-700 dark:to-gray-800 text-gray-50 dark:text-gray-200 pt-28 pb-12 px-8 pl-28 pr-28 overflow-x-hidden">
+<div className="bg-gradient-to-r from-blue-400 to-[#D1C7FE] dark:bg-gradient-to-r dark:from-blue-700 dark:via-blue-700 dark:to-gray-800 text-gray-50 dark:text-gray-200 pt-28 pb-12 px-8 pl-28 pr-28 overflow-x-hidden">
 
-      <h1 className="text-3xl font-bold text-center mb-10">Hobbies</h1>
+
+      <h1 className="text-5xl font-extrabold text-center text-indigo-800 dark:text-red-100 mb-10 tracking-wide ">Hobbies</h1>
       
       {/* Animated Horizontal Line */}
       <div
@@ -112,26 +113,27 @@ export default function Hobbies() {
           </div>
         ))}
       </div>
+
       <style jsx>{`
   @keyframes slide {
     0% {
       width: 0%;
-      box-shadow: 0 0 0px 0px rgba(25, 255, 255, 0.9); /* Subtle White Shadow */
+      box-shadow: 0 0 0px 0px rgba(255, 255, 255, 0.9); /* Subtle white shadow */
     }
     100% {
       width: 100%;
-      box-shadow: 0 0 5px 2px rgba(255, 25, 25, 0.3); /* Subtle White Shadow */
+      box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.3); /* Subtle white shadow */
     }
   }
 
   .animate-line {
     animation: slide 2s ease-in-out forwards;
-    background-color: rgba(129, 140, 248, 0.4); /* White for normal mode */
+    background-color: rgba(0, 255, 255, 0.8); /* Bright cyan for normal mode */
   }
 
   .dark .animate-line {
-    background-color: rgba(129, 140, 248, 0.8); /* Green for dark mode */
-    box-shadow: 0 0 5px 2px rgba(129, 140, 248, 0.3); /* Green shadow for dark mode */
+    background-color: rgba(0, 255, 0, 0.8); /* Bright green for dark mode */
+    box-shadow: 0 0 5px 2px rgba(0, 255, 0, 0.3); /* Green shadow for dark mode */
   }
 `}</style>
 

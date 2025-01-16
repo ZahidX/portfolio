@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function ProjectsResearchPage() {
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 min-h-screen" id="projects">
-      <h1 className="pt-12 pb-12 font-bold text-3xl text-center underline underline-offset-4 decoration-blue-500 text-black dark:text-white">
+<div className="-mt-10 bg-gray-100 dark:bg-gradient-to-r dark:from-[#0E1628] dark:to-[#380643] min-h-screen" id="projects">
+      <h1 className="text-5xl font-extrabold text-center text-indigo-600 dark:text-indigo-400 mb-10 tracking-wide">
         Projects & Research
       </h1>
 

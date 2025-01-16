@@ -1,13 +1,15 @@
 export default function About() {
   return (
-    <div
-      id="about"
-      className="dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-800 dark:to-black dark:text-gray-100"
-    >
-      <h1 className="pt-28 pb-12 font-bold text-2xl text-center underline underline-offset-4 dark:decoration-white">
+<div
+  id="about"
+  className="dark:bg-gradient-to-b dark:from-[#220E36] dark:to-[#270B4A] dark:text-gray-100"
+>
+
+
+      <h1 className="pt-28 pb-12 font-bold text-5xl text-center dark:decoration-white">
         About Me
       </h1>
-      <div className="dark:bg-gradient-to-b dark:from-gray-800 dark:via-gray-900 dark:to-black pb-20 pt-8 pl-40 flex flex-col md:flex-row justify-between px-6">
+      <div className="pb-20 pt-8 pl-40 flex flex-col md:flex-row justify-between px-6">
         {/* Personal Details Section */}
         <div className="flex md:w-1/2 mb-6 md:mb-0">
           <div>
@@ -16,37 +18,32 @@ export default function About() {
             </h2>
             <div className="dark:text-gray-300">
               <p>
-                <span className="font-semibold">Name:</span> Zahid
+                <span className="font-semibold">Name:</span> Zahidul Islam
               </p>
               <p>
-                <span className="font-semibold">Location:</span> [Your Location]
+                <span className="font-semibold">Location:</span> Baridhara, Dhaka
               </p>
               <p>
                 <span className="font-semibold">Profession:</span> Aspiring Web
                 Developer
               </p>
               <p>
-                <span className="font-semibold">Hobbies:</span> [Your Hobbies]
+                <span className="font-semibold">Hobbies:</span> Reading Book
               </p>
               <p>
-                <span className="font-semibold">Age:</span> [Your Age]
+                <span className="font-semibold">Age:</span> 24
               </p>
               <p>
                 <span className="font-semibold">Languages Spoken:</span>{" "}
-                English, [Other Languages]
+                English, Bangla, Hindi, French
               </p>
               <p>
-                <span className="font-semibold">Email:</span> [Your Email
-                Address]
+                <span className="font-semibold">Email:</span> zahid.imx@gmail.com
               </p>
               <p>
-                <span className="font-semibold">Phone:</span> [Your Phone
-                Number]
+                <span className="font-semibold">Phone:</span> +880 175 430 9016
               </p>
-              <p>
-                <span className="font-semibold">Favorite Quote:</span> "[Your
-                Favorite Quote]"
-              </p>
+              
             </div>
           </div>
         </div>
@@ -63,8 +60,7 @@ export default function About() {
                 Computer Science (CSE)
               </p>
               <p>
-                <span className="font-semibold">Graduation Year:</span> [Your
-                Graduation Year]
+                <span className="font-semibold">Graduation Year:</span> 2024
               </p>
               <p>
                 <span className="font-semibold">Specialization:</span>{" "}
@@ -83,8 +79,8 @@ export default function About() {
                 real-time chatbot and a vocabulary learning website
               </p>
               <p>
-                <span className="font-semibold">Achievements:</span> Winner of
-                Hackathon 2023, Top scorer in Machine Learning course
+                <span className="font-semibold">Achievements:</span> Participated
+                Hackathon 2023, Working in Machine Learning Field
               </p>
             </div>
           </div>

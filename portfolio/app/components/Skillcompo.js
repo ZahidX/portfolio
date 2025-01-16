@@ -15,38 +15,42 @@ export default function SkillsSection() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gray-50 py-20 overflow-hidden">
+    <div className="relative min-h-screen bg-gray-100 py-12 overflow-hidden dark:bg-gradient-to-b dark:from-[#270C48] dark:to-[#220E36] dark:text-white">
+      <h1 className="text-2xl font-bold text-center bg-clip-text text-blue-600 dark:text-blue-300 mb-8">
+        Web
+      </h1>
+
       <style>{`
-        @keyframes float {
+        @keyframes bounce {
           0%, 100% {
-            transform: translate(0, 0);
-          }
-          25% {
-            transform: translate(20px, -20px);
+            transform: translateY(0);
           }
           50% {
-            transform: translate(-20px, 20px);
-          }
-          75% {
-            transform: translate(-10px, -10px);
+            transform: translateY(-20px);
           }
         }
-        .floating {
-          animation: float 5s ease-in-out infinite;
+        .bouncing {
+          animation: bounce 3s infinite ease-in-out;
         }
       `}</style>
+
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative z-10">
         {skills.map((skill, index) => (
           <div
             key={index}
-            className={`flex items-center justify-center p-4 rounded-lg shadow-md ${skill.color} floating`}
+            className={`flex items-center justify-center p-4 rounded-lg shadow-md ${skill.color} bouncing dark:${skill.color.replace(
+              "bg",
+              "dark:bg"
+            )}`}
             style={{
-              width: "100px",
-              height: "100px",
-              animationDelay: `${index * 0.5}s`,
+              width: "120px",
+              height: "120px",
+              animationDelay: `${index * 0.3}s`,
             }}
           >
-            <p className="text-center text-white font-semibold">{skill.name}</p>
+            <p className="text-center text-white font-semibold dark:text-gray-200">
+              {skill.name}
+            </p>
           </div>
         ))}
       </div>

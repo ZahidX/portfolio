@@ -3,8 +3,8 @@ import Profile from "../images/profile.png"; // Correct path
 
 export default function Home() {
   return (
-    <div className="profile_section h-96 mt-12" id="home">
-      <div className="flex items-center justify-between p-8 shadow-lg mx-auto bg-gradient-to-r from-[#1F0143] via-[#3f024f] to-[#782437] animate-gradient-x bg-[length:200%_200%] h-96">
+    <div className="profile_section h-96 mt-12 bg-gray-100" id="home">
+      <div className="bg-gray-100 flex items-center justify-between p-8 shadow-lg mx-auto bg-gradient-to-r from-[#1F0143] via-[#3f024f] to-[#782437] animate-gradient-x bg-[length:200%_200%] h-96">
         <div className="profile_image flex-shrink-0 ml-72">
           <Image
             src={Profile}
