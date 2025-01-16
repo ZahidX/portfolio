@@ -8,6 +8,8 @@ import Hobby from "./pages/Hobby";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 import Home from "./pages/Home"; // Corrected import path
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 
 export default function Page() {
   return (

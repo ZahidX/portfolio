@@ -1,0 +1,67 @@
+"use client";
+import React from "react";
+
+export default function Address() {
+  return (
+    <div className="flex justify-start items-center py-16 px-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        {/* Home Icon */}
+        <div className="flex flex-col items-start">
+          <div className="icon-container home-icon w-24 h-24 bg-indigo-500 text-white flex justify-center items-center rounded-full shadow-lg">
+            <i className="fas fa-home text-4xl"></i>
+          </div>
+        </div>
+
+        {/* Phone Icon */}
+        <div className="flex flex-col items-start">
+          <div className="icon-container phone-icon w-24 h-24 bg-green-500 text-white flex justify-center items-center rounded-full shadow-lg">
+            <i className="fas fa-phone text-4xl"></i>
+          </div>
+        </div>
+
+        {/* Email Icon */}
+        <div className="flex flex-col items-start">
+          <div className="icon-container email-icon w-24 h-24 bg-red-500 text-white flex justify-center items-center rounded-full shadow-lg">
+            <i className="fas fa-envelope text-4xl"></i>
+          </div>
+        </div>
+      </div>
+
+      {/* Animations */}
+      <style jsx>{`
+        .icon-container {
+          animation: floatExpanded 5s ease-in-out infinite;
+        }
+
+        @keyframes floatExpanded {
+          0% {
+            transform: translate(0, 0);
+          }
+          25% {
+            transform: translate(40px, -40px);
+          }
+          50% {
+            transform: translate(0, -60px);
+          }
+          75% {
+            transform: translate(-40px, -40px);
+          }
+          100% {
+            transform: translate(0, 0);
+          }
+        }
+
+        /* Specific adjustments for staggered animations */
+        .home-icon {
+          animation-delay: 0.2s;
+        }
+        .phone-icon {
+          animation-delay: 0.4s;
+        }
+        .email-icon {
+          animation-delay: 0.6s;
+        }
+      `}</style>
+    </div>
+  );
+}
