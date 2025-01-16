@@ -1,18 +1,21 @@
 import React from "react";
 import Image from "next/image";
+import Robot from "../images/robot.png";
+import Shoping from "../images/shoping.png";
+import Task from "../images/task.png";
 
 export default function ProjectsResearchPage() {
   return (
-<div className="-mt-10 bg-gray-100 dark:bg-gradient-to-r dark:from-[#0E1628] dark:to-[#380643] min-h-screen" id="projects">
-      <h1 className="text-5xl font-extrabold text-center text-indigo-600 dark:text-indigo-400 mb-10 tracking-wide">
-        Projects & Research
+<div className=" pl-14 pr-14 bg-gray-100 dark:bg-gradient-to-r dark:from-[#0E1628] dark:to-[#380643] min-h-screen" id="projects">
+      <h1 className="text-5xl font-extrabold text-center text-indigo-600 dark:text-indigo-400 pt-16 tracking-wide">
+        Projects
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-8" >
         {/* Project Card 1 */}
-        <div className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg">
+        <div className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg text-center">
           <Image
-            src="/images/student-performance.png" // Replace with your actual image path
+            src={Robot} // Replace with your actual image path
             alt="Student Performance Monitoring System"
             width={400}
             height={200}
@@ -21,18 +24,19 @@ export default function ProjectsResearchPage() {
             priority={true} // Improves image loading for the first visible project
           />
           <div className="pt-4">
-            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-              Student Performance Monitoring System
-            </h3>
-            <p className="mt-2 text-gray-700 dark:text-gray-300">
-              A web-based application for monitoring and managing student
-              performance. Built using React, Node.js, and MySQL.
-            </p>
+          <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+  Social Interactive Robot
+</h3>
+<p className="mt-2 text-gray-700 dark:text-gray-300">
+  A cutting-edge project designed to facilitate human-robot interaction, 
+  incorporating advanced AI and natural language processing. 
+</p>
+
             <a
               href="https://github.com/your-repo-link" // Replace with actual GitHub link
               target="_blank"
               rel="noopener noreferrer"
-              className="block mt-4 text-blue-500 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300"
+              className="block mt-4 text-blue-500 dark:text-blue- hover:text-blue-700 dark:hover:text-blue-300"
             >
               GitHub Link
             </a>
@@ -40,13 +44,13 @@ export default function ProjectsResearchPage() {
         </div>
 
         {/* Project Card 2 */}
-        <div className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg">
+        <div className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg text-center">
           <Image
-            src="/images/todo-list.png" // Replace with your actual image path
+            src={Task} // Replace with your actual image path
             alt="To-Do List App"
-            width={400}
+            width={390}
             height={200}
-            className="rounded-t-lg"
+            className="rounded-t-lg ml-3 mt-4"
             objectFit="cover"
           />
           <div className="pt-4">
@@ -62,7 +66,7 @@ export default function ProjectsResearchPage() {
               href="https://github.com/your-repo-link" // Replace with actual GitHub link
               target="_blank"
               rel="noopener noreferrer"
-              className="block mt-4 text-blue-500 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300"
+              className="block mt-4 text-blue-500 dark:text-blue-400  hover:text-blue-700 dark:hover:text-blue-300"
             >
               GitHub Link
             </a>
@@ -70,13 +74,13 @@ export default function ProjectsResearchPage() {
         </div>
 
         {/* Project Card 3 */}
-        <div className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg">
+        <div className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 rounded-lg text-center">
           <Image
-            src="/images/shopping-cart.png" // Replace with your actual image path
+            src={Shoping} // Replace with your actual image path
             alt="Simple Shopping Cart"
-            width={400}
+            width={350}
             height={200}
-            className="rounded-t-lg"
+            className="rounded-t-lg pl-12 pt-8"
             objectFit="cover"
           />
           <div className="pt-4">
@@ -91,7 +95,7 @@ export default function ProjectsResearchPage() {
               href="https://github.com/your-repo-link" // Replace with actual GitHub link
               target="_blank"
               rel="noopener noreferrer"
-              className="block mt-4 text-blue-500 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300"
+              className="block mt-4 text-blue-500 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
             >
               GitHub Link
             </a>

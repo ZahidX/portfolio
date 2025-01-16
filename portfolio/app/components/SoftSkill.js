@@ -10,6 +10,9 @@ export default function SoftSkillPage() {
     { name: "Critical Thinking", color: "bg-indigo-500" },
     { name: "Adaptability", color: "bg-teal-500" },
     { name: "Leadership", color: "bg-orange-500" },
+    { name: "Creativity", color: "bg-pink-500" }, // New item
+    { name: "Management", color: "bg-cyan-500" }, // New item
+    
   ];
 
   return (
@@ -18,9 +21,13 @@ export default function SoftSkillPage() {
       className="min-h-screen bg-gray-100 py-1 dark:bg-gradient-to-b dark:from-[#270C48] dark:to-[#220E36] dark:text-white"
     >
       {/* Page Heading */}
-      <h1 className="pt-12  font-bold text-2xl text-center text-blue-600 dark:text-blue-300">
-        Soft Skills
-      </h1>
+      <h1
+  className="font-bold text-2xl text-center text-blue-600 dark:text-blue-300"
+  style={{ paddingTop: "4.2rem", paddingBottom: "3rem" }}
+>
+  Soft Skills
+</h1>
+
 
       {/* Add animation styles */}
       <style>{`

@@ -58,7 +58,7 @@ export default function SkillPage() {
       {/* Skills Sections */}
       <div className="flex flex-col lg:flex-row justify-between px-8 py-6 space-y-8 lg:space-y-0 lg:space-x-8">
         {/* Programming Skills */}
-        <div className="flex-1 bg-gray-100 text-center rounded-lg dark:bg-gradient-to-b dark:from-[#270C48] dark:to-[#220E36] dark:text-white">
+        <div className="flex-1 p-5 bg-gray-100 text-center rounded-lg dark:bg-gradient-to-b dark:from-[#270C48] dark:to-[#220E36] dark:text-white">
           <h2 className="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-300 pt-12">
             Programming Languages and Frameworks
           </h2>
@@ -130,6 +130,27 @@ export default function SkillPage() {
                 </span>
               </div>
             </div>
+
+
+              {/* {Node Js} */}
+              <div>
+              <div className="flex justify-between text-gray-700 dark:text-gray-300">
+                <span className="font-semibold">Node Js</span>
+              </div>
+              <div className="w-full bg-gray-200 h-7 rounded-full overflow-hidden relative dark:bg-gray-600">
+                <div
+                  className="h-7 rounded-full progress-bar bg-green-700"
+                  data-progress="50%"
+                  style={{ width: "50%" }}
+                ></div>
+                <span className="absolute inset-0 flex justify-center items-center text-white font-semibold">
+                  50%
+                </span>
+              </div>
+            </div>
+
+
+
 
             {/* React JS */}
             <div>

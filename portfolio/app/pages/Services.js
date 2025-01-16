@@ -1,20 +1,34 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 import Web from "../images/web.png";
 import Ps from "../images/ps.png";
 import Bug from "../images/bug.png";
 import Email from "../images/email.png";
 import Image from "next/image";
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export default function ServicePage() {
   return (
-<div className="bg-gray-100 dark:bg-gradient-to-r dark:from-[#0E1628] dark:to-[#380643] min-h-screen">
+    <div className="bg-gray-100 dark:bg-gradient-to-r dark:from-[#0E1628] dark:to-[#380643] min-h-screen -mb-24">
       <h1 className="pt-12 pb-4 font-bold text-5xl text-center text-black dark:text-white">
         Services
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-2 py-2 pt-16">
         {/* Service Card 1: Web Development */}
-        <div className="bg-gray-50 dark:bg-gray-800 shadow-md ml-36 p-6 rounded-lg w-full md:w-4/5 mx-auto">
+        <motion.div
+          className="bg-gray-50 dark:bg-gray-800 shadow-md ml-36 p-6 rounded-lg w-full md:w-4/5 mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          variants={cardVariants}
+        >
           <div className="flex items-center space-x-2">
             <Image
               src={Web}
@@ -31,13 +45,20 @@ export default function ServicePage() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Service Card 2: Photoshop */}
-        <div className="bg-gray-50 dark:bg-gray-800 shadow-md mr-36 p-6 rounded-lg w-full md:w-4/5 mx-auto">
+        <motion.div
+          className="bg-gray-50 dark:bg-gray-800 shadow-md mr-36 p-6 rounded-lg w-full md:w-4/5 mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          variants={cardVariants}
+        >
           <div className="flex items-center space-x-2">
             <Image
-              src={Ps} 
+              src={Ps}
               alt="Photoshop"
               className="w-24 h-24 mr-2 object-cover rounded-full"
             />
@@ -51,13 +72,20 @@ export default function ServicePage() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Service Card 3: Bug Fixing */}
-        <div className="bg-gray-50 dark:bg-gray-800 shadow-md ml-36 p-6 rounded-lg w-full md:w-4/5 mx-auto">
+        <motion.div
+          className="bg-gray-50 dark:bg-gray-800 shadow-md ml-36 p-6 rounded-lg w-full md:w-4/5 mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          variants={cardVariants}
+        >
           <div className="flex items-center space-x-2">
             <Image
-              src={Bug} 
+              src={Bug}
               alt="Bug Fixing"
               className="w-36 h-36 object-cover rounded-full -ml-3"
             />
@@ -71,13 +99,20 @@ export default function ServicePage() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Service Card 4: Email Template */}
-        <div className="bg-gray-50 dark:bg-gray-800 shadow-md mr-36 p-6 rounded-lg w-full md:w-4/5 mx-auto">
+        <motion.div
+          className="bg-gray-50 dark:bg-gray-800 shadow-md mr-36 p-6 rounded-lg w-full md:w-4/5 mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          variants={cardVariants}
+        >
           <div className="flex items-center space-x-2">
             <Image
-              src={Email} // Replace with your actual image path
+              src={Email}
               alt="Email Template"
               className="w-32 h-32 object-cover rounded-full -ml-2"
             />
@@ -91,7 +126,7 @@ export default function ServicePage() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

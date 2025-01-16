@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import DarkModeToggle from "./components/DarkModeToggle";
+import Nav from "./pages/Nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,71 +25,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="fixed top-0 w-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 flex justify-between items-center min-h-12 z-20">
-          {/* Logo Section */}
-          <div className="ml-48">
-            <Link
-              href="/"
-              className="text-3xl font-bold text-gray-600 dark:text-gray-200"
-              style={{
-                fontFamily: "'Dancing Script', cursive",
-                textShadow:
-                  "2px 2px 8px rgba(156, 0, 128, 0.8), 0px 0px 12px rgba(32, 196, 128, 0.5)",
-              }}
-            >
-              Zahid
-            </Link>
-          </div>
-
-          {/* Navigation Links */}
-          <div className="flex space-x-6 mr-36 font-semibold">
-            <Link
-              href="/#home"
-              className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              Home
-            </Link>
-            <Link
-              href="/#about"
-              className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              About Me
-            </Link>
-            <Link
-              href="/#skills"
-              className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              Skills
-            </Link>
-            <Link
-              href="/#experience"
-              className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              Experience
-            </Link>
-            <Link
-              href="/#projects"
-              className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              Projects
-            </Link>
-            <Link
-              href="/#contact"
-              className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              Contact
-            </Link>
-            <Link
-              href="/blog"
-              className="text-lg text-gray-900 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400"
-            >
-              Blog
-            </Link>
+        {/* Navbar */}
 
             {/* Dark Mode Toggle */}
+            <Nav />
             <DarkModeToggle />
-          </div>
-        </div>
+
 
         {children}
       </body>

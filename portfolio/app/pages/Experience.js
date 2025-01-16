@@ -25,7 +25,7 @@ export default function ExperiencePage() {
             card.style.transform = "translateY(0) scale(1)";
           } else {
             card.style.opacity = 0;
-            card.style.transform = "translateY(60px) scale(0.9)";
+            card.style.transform = "translateY(80px) scale(0.85)";
           }
         }
       });
@@ -71,28 +71,31 @@ export default function ExperiencePage() {
   ];
 
   return (
-<div
-  id="experience"
-  className="min-h-screen  bg-gray-100 py-10 dark:bg-gradient-to-b dark:from-[#220E35] dark:to-[#0E1628] dark:text-white"
->
-
-      <h1 className="pt-12 pb-12 font-bold text-5xl text-center decoration-blue-500 dark:decoration-gray-100">
+    <div
+      id="experience"
+      className="min-h-screen pl-8 pr-8 lg:pl-40 lg:pr-40  bg-gray-100 py-10 dark:bg-gradient-to-b dark:from-[#220E35] dark:to-[#0E1628] dark:text-white"
+    >
+      <h1 className=" mt-5 font-bold text-5xl text-center decoration-blue-500 dark:decoration-gray-100">
         Experience
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 py-8">
         {experiences.map((exp, index) => (
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            className={`shadow-lg p-6 rounded-xl transform transition-all duration-[1200ms] ease-out hover:shadow-2xl hover:scale-[1.05] hover:rotate-[2deg] ${exp.color} dark:bg-transparent dark:text-white`}
+            className={`shadow-lg p-6 rounded-xl transform transition-all duration-[800ms] ease-out hover:shadow-2xl hover:scale-[1.07] hover:rotate-[3deg] ${exp.color} dark:bg-transparent dark:text-white`}
             style={{
               opacity: 0, // Hidden by default
-              transform: "translateY(60px) scale(0.9)", // Initial state
+              transform: "translateY(80px) scale(0.85)", // Initial state
             }}
           >
-            <h3 className="text-2xl font-semibold dark:text-white">{exp.title}</h3>
-            <p className="text-sm mt-2 dark:text-gray-100">{exp.organization}</p>
+            <h3 className="text-2xl font-semibold dark:text-white">
+              {exp.title}
+            </h3>
+            <p className="text-sm mt-2 dark:text-gray-100">
+              {exp.organization}
+            </p>
             <p className="text-sm dark:text-gray-50">{exp.duration}</p>
             <p className="mt-4 text-base dark:text-gray-50">{exp.description}</p>
           </div>

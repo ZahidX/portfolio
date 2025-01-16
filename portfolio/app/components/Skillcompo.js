@@ -16,7 +16,7 @@ export default function SkillsSection() {
 
   return (
     <div className="relative min-h-screen bg-gray-100 py-12 overflow-hidden dark:bg-gradient-to-b dark:from-[#270C48] dark:to-[#220E36] dark:text-white">
-      <h1 className="text-2xl font-bold text-center bg-clip-text text-blue-600 dark:text-blue-300 mb-8">
+      <h1 className="text-2xl font-bold text-center bg-clip-text text-blue-600 dark:text-blue-300 mb-20 pt-5">
         Web
       </h1>
 
@@ -34,7 +34,7 @@ export default function SkillsSection() {
         }
       `}</style>
 
-      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative z-10">
+      <div className="max-w-5xl p-5 mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 relative z-10">
         {skills.map((skill, index) => (
           <div
             key={index}
